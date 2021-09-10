@@ -54,8 +54,8 @@ namespace eAgenda.WindowsForms
             this.cb_prioridadeTarefa = new System.Windows.Forms.ComboBox();
             this.tb_name = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tb_porcentagem = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tb_porcentagem = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tb_tarefas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -166,13 +166,16 @@ namespace eAgenda.WindowsForms
             // 
             // bt_atualizar
             // 
+            this.bt_atualizar.BackColor = System.Drawing.Color.MediumAquamarine;
             this.bt_atualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_atualizar.Location = new System.Drawing.Point(28, 82);
+            this.bt_atualizar.Font = new System.Drawing.Font("Veneer", 10F);
+            this.bt_atualizar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_atualizar.Location = new System.Drawing.Point(17, 76);
             this.bt_atualizar.Name = "bt_atualizar";
-            this.bt_atualizar.Size = new System.Drawing.Size(145, 23);
+            this.bt_atualizar.Size = new System.Drawing.Size(153, 29);
             this.bt_atualizar.TabIndex = 5;
             this.bt_atualizar.Text = "Atualizar Porcentagem";
-            this.bt_atualizar.UseVisualStyleBackColor = true;
+            this.bt_atualizar.UseVisualStyleBackColor = false;
             this.bt_atualizar.Click += new System.EventHandler(this.bt_atualizar_Click);
             // 
             // panel3
@@ -190,31 +193,35 @@ namespace eAgenda.WindowsForms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 54);
+            this.label5.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label5.Location = new System.Drawing.Point(46, 54);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 7;
             this.label5.Text = "Prioridade";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 28);
+            this.label6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(14, 27);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 13);
+            this.label6.Size = new System.Drawing.Size(98, 13);
             this.label6.TabIndex = 6;
             this.label6.Text = "Nome da Tarefa";
-           
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.MediumAquamarine;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(118, 83);
+            this.button2.Font = new System.Drawing.Font("Veneer", 10F);
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(118, 78);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(84, 29);
             this.button2.TabIndex = 4;
             this.button2.Text = "Gravar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.bt_gravar_Click);
             // 
             // cb_prioridadeTarefa
@@ -224,14 +231,14 @@ namespace eAgenda.WindowsForms
             "Baixa",
             "Normal",
             "Alta"});
-            this.cb_prioridadeTarefa.Location = new System.Drawing.Point(118, 51);
+            this.cb_prioridadeTarefa.Location = new System.Drawing.Point(118, 46);
             this.cb_prioridadeTarefa.Name = "cb_prioridadeTarefa";
             this.cb_prioridadeTarefa.Size = new System.Drawing.Size(178, 21);
             this.cb_prioridadeTarefa.TabIndex = 3;
             // 
             // tb_name
             // 
-            this.tb_name.Location = new System.Drawing.Point(118, 25);
+            this.tb_name.Location = new System.Drawing.Point(118, 20);
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(178, 20);
             this.tb_name.TabIndex = 0;
@@ -239,34 +246,37 @@ namespace eAgenda.WindowsForms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 48);
+            this.label4.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label4.Location = new System.Drawing.Point(60, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Percentual";
-            // 
-            // tb_porcentagem
-            // 
-            this.tb_porcentagem.Location = new System.Drawing.Point(92, 48);
-            this.tb_porcentagem.Name = "tb_porcentagem";
-            this.tb_porcentagem.Size = new System.Drawing.Size(62, 20);
-            this.tb_porcentagem.TabIndex = 1;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.tb_porcentagem);
             this.panel4.Controls.Add(this.bt_atualizar);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.tb_porcentagem);
             this.panel4.Location = new System.Drawing.Point(345, 410);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 114);
+            this.panel4.Size = new System.Drawing.Size(182, 114);
             this.panel4.TabIndex = 3;
+            // 
+            // tb_porcentagem
+            // 
+            this.tb_porcentagem.Location = new System.Drawing.Point(66, 42);
+            this.tb_porcentagem.Mask = "000%";
+            this.tb_porcentagem.Name = "tb_porcentagem";
+            this.tb_porcentagem.Size = new System.Drawing.Size(55, 20);
+            this.tb_porcentagem.TabIndex = 9;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-21, -76);
+            this.pictureBox1.Location = new System.Drawing.Point(-22, -65);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(330, 296);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -298,32 +308,38 @@ namespace eAgenda.WindowsForms
             // 
             // bt_editarPendente
             // 
+            this.bt_editarPendente.BackColor = System.Drawing.Color.MediumAquamarine;
             this.bt_editarPendente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_editarPendente.Location = new System.Drawing.Point(267, 197);
+            this.bt_editarPendente.Font = new System.Drawing.Font("Veneer", 10F);
+            this.bt_editarPendente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_editarPendente.Location = new System.Drawing.Point(269, 190);
             this.bt_editarPendente.Name = "bt_editarPendente";
-            this.bt_editarPendente.Size = new System.Drawing.Size(75, 23);
+            this.bt_editarPendente.Size = new System.Drawing.Size(84, 29);
             this.bt_editarPendente.TabIndex = 4;
             this.bt_editarPendente.Text = "Editar";
-            this.bt_editarPendente.UseVisualStyleBackColor = true;
+            this.bt_editarPendente.UseVisualStyleBackColor = false;
             this.bt_editarPendente.Click += new System.EventHandler(this.bt_editarPendente_Click);
             // 
             // bt_excluirPendente
             // 
+            this.bt_excluirPendente.BackColor = System.Drawing.Color.Black;
             this.bt_excluirPendente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_excluirPendente.Location = new System.Drawing.Point(128, 197);
+            this.bt_excluirPendente.Font = new System.Drawing.Font("Veneer", 10F);
+            this.bt_excluirPendente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_excluirPendente.Location = new System.Drawing.Point(130, 190);
             this.bt_excluirPendente.Name = "bt_excluirPendente";
-            this.bt_excluirPendente.Size = new System.Drawing.Size(75, 23);
+            this.bt_excluirPendente.Size = new System.Drawing.Size(84, 29);
             this.bt_excluirPendente.TabIndex = 3;
             this.bt_excluirPendente.Text = "Excluir";
-            this.bt_excluirPendente.UseVisualStyleBackColor = true;
+            this.bt_excluirPendente.UseVisualStyleBackColor = false;
             this.bt_excluirPendente.Click += new System.EventHandler(this.bt_excluir_Click);
             // 
             // dataGridTarefas
             // 
             this.dataGridTarefas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridTarefas.Location = new System.Drawing.Point(6, 16);
+            this.dataGridTarefas.Location = new System.Drawing.Point(10, 6);
             this.dataGridTarefas.Name = "dataGridTarefas";
-            this.dataGridTarefas.Size = new System.Drawing.Size(484, 168);
+            this.dataGridTarefas.Size = new System.Drawing.Size(478, 174);
             this.dataGridTarefas.TabIndex = 0;
             // 
             // tabPage2
@@ -341,24 +357,30 @@ namespace eAgenda.WindowsForms
             // 
             // bt_editarConcluida
             // 
+            this.bt_editarConcluida.BackColor = System.Drawing.Color.MediumAquamarine;
             this.bt_editarConcluida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_editarConcluida.Location = new System.Drawing.Point(280, 197);
+            this.bt_editarConcluida.Font = new System.Drawing.Font("Veneer", 10F);
+            this.bt_editarConcluida.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_editarConcluida.Location = new System.Drawing.Point(272, 191);
             this.bt_editarConcluida.Name = "bt_editarConcluida";
-            this.bt_editarConcluida.Size = new System.Drawing.Size(75, 23);
+            this.bt_editarConcluida.Size = new System.Drawing.Size(84, 29);
             this.bt_editarConcluida.TabIndex = 2;
             this.bt_editarConcluida.Text = "Editar";
-            this.bt_editarConcluida.UseVisualStyleBackColor = true;
+            this.bt_editarConcluida.UseVisualStyleBackColor = false;
             this.bt_editarConcluida.Click += new System.EventHandler(this.bt_editarConcluida_Click);
             // 
             // bt_excluirConcluida
             // 
+            this.bt_excluirConcluida.BackColor = System.Drawing.SystemColors.ControlText;
             this.bt_excluirConcluida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_excluirConcluida.Location = new System.Drawing.Point(137, 197);
+            this.bt_excluirConcluida.Font = new System.Drawing.Font("Veneer", 10F);
+            this.bt_excluirConcluida.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_excluirConcluida.Location = new System.Drawing.Point(129, 191);
             this.bt_excluirConcluida.Name = "bt_excluirConcluida";
-            this.bt_excluirConcluida.Size = new System.Drawing.Size(75, 23);
+            this.bt_excluirConcluida.Size = new System.Drawing.Size(84, 29);
             this.bt_excluirConcluida.TabIndex = 1;
             this.bt_excluirConcluida.Text = "Excluir";
-            this.bt_excluirConcluida.UseVisualStyleBackColor = true;
+            this.bt_excluirConcluida.UseVisualStyleBackColor = false;
             this.bt_excluirConcluida.Click += new System.EventHandler(this.bt_excluirConcluida_Click);
             // 
             // dataGridTarefaConcluidas
@@ -389,7 +411,8 @@ namespace eAgenda.WindowsForms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "TarefaForms";
-            this.Text = "Tarefas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Minhas Tarefas";
             ((System.ComponentModel.ISupportInitialize)(this.dataSetPendentes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_tarefapendente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetConcluidas)).EndInit();
@@ -434,7 +457,6 @@ namespace eAgenda.WindowsForms
         private System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.Button bt_atualizar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tb_porcentagem;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabControl tb_tarefas;
@@ -447,6 +469,7 @@ namespace eAgenda.WindowsForms
         private System.Windows.Forms.Button bt_excluirConcluida;
         private System.Windows.Forms.DataGridView dataGridTarefaConcluidas;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.MaskedTextBox tb_porcentagem;
     }
 }
 

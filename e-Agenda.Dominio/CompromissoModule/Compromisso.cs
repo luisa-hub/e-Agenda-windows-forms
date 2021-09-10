@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 namespace eAgenda.Dominio.CompromissoModule
 {
+    /// <summary>
+    /// Classe para a criação dos compromissos
+    /// </summary>
     public class Compromisso : EntidadeBase, IEquatable<Compromisso>
     {        
         public Compromisso(string assunto, string local, string link, DateTime data,
@@ -59,6 +62,10 @@ namespace eAgenda.Dominio.CompromissoModule
             return hashCode;
         }
 
+        /// <summary>
+        /// Validação dos campos do comprimisso
+        /// </summary>
+        /// <returns></returns>
         public override string Validar()
         {
             string resultadoValidacao = "";

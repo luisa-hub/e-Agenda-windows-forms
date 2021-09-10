@@ -65,22 +65,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompromissoForms.cs">
+    <Compile Include="CompromissoModule\CompromissoForms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CompromissoForms.Designer.cs">
+    <Compile Include="CompromissoModule\CompromissoForms.Designer.cs">
       <DependentUpon>CompromissoForms.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContatoForms.cs">
+    <Compile Include="ContatoModule\ContatoForms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ContatoForms.Designer.cs">
+    <Compile Include="ContatoModule\ContatoForms.Designer.cs">
       <DependentUpon>ContatoForms.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DBeAgendaDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBeAgendaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="FormGeral.cs">
       <SubType>Form</SubType>
@@ -88,24 +83,24 @@
     <Compile Include="FormGeral.Designer.cs">
       <DependentUpon>FormGeral.cs</DependentUpon>
     </Compile>
-    <Compile Include="TarefaForms.cs">
+    <Compile Include="TarefasModule\TarefaForms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TarefaForms.Designer.cs">
+    <Compile Include="TarefasModule\TarefaForms.Designer.cs">
       <DependentUpon>TarefaForms.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CompromissoForms.resx">
+    <EmbeddedResource Include="CompromissoModule\CompromissoForms.resx">
       <DependentUpon>CompromissoForms.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ContatoForms.resx">
+    <EmbeddedResource Include="ContatoModule\ContatoForms.resx">
       <DependentUpon>ContatoForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGeral.resx">
       <DependentUpon>FormGeral.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TarefaForms.resx">
+    <EmbeddedResource Include="TarefasModule\TarefaForms.resx">
       <DependentUpon>TarefaForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -117,17 +112,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DBeAgendaDataSet.xsc">
-      <DependentUpon>DBeAgendaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DBeAgendaDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DBeAgendaDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DBeAgendaDataSet.xss">
-      <DependentUpon>DBeAgendaDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

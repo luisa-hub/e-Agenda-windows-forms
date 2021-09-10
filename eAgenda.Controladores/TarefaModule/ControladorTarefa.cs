@@ -6,6 +6,9 @@ using System.Data;
 
 namespace eAgenda.Controladores.TarefaModule
 {
+    /// <summary>
+    /// Controlador das tarefas. Contém os métodos relativos aos bancos de dados.
+    /// </summary>
     public class ControladorTarefa : Controlador<Tarefa>
     {
         #region Queries
@@ -108,7 +111,11 @@ namespace eAgenda.Controladores.TarefaModule
 
         #endregion
 
-
+        /// <summary>
+        /// Insere uma nova tarefa no banco de dados
+        /// </summary>
+        /// <param name="registro">Recebe um registro do tipo Tarefa</param>
+        /// <returns></returns>
         public override string InserirNovo(Tarefa registro)
         {
             string resultadoValidacao = registro.Validar();
@@ -121,6 +128,13 @@ namespace eAgenda.Controladores.TarefaModule
             return resultadoValidacao;
         }
 
+
+        /// <summary>
+        /// Edita no banco de dados a tarefa
+        /// </summary>
+        /// <param name="id">Recebe o Id da tarefa que deseja editar</param>
+        /// <param name="registro">Recebe um registro do tipo Tarefa</param>
+        /// <returns></returns>
         public override string Editar(int id, Tarefa registro)
         {
             string resultadoValidacao = registro.Validar();
@@ -166,17 +180,14 @@ namespace eAgenda.Controladores.TarefaModule
 
         public void AtualizarPercentual(int id, int novoPercentual)
         {
-            Tarefa tarefa = SelecionarPorId(id);
+            Tarefa tarefa = SelecionarPorId(id);            
 
-            AtualizarPercentual(tarefa, novoPercentual);
-        }
-
-        public void AtualizarPercentual(Tarefa tarefa, int novoPercentual)
-        {
             tarefa.AtualizarPercentual(novoPercentual, DateTime.Today);
 
             Editar(tarefa.Id, tarefa);
         }
+
+       
                       
         public List<Tarefa> SelecionarTodasTarefasConcluidas()
         {

@@ -124,7 +124,8 @@ namespace eAgenda.WindowsForms
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Name = "FormGeral";
-            this.Text = "FormGeral";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "e-Agenda";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

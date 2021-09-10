@@ -21,7 +21,7 @@ namespace eAgenda.WindowsForms
             InitializeComponent();
             this.controlador = controlador;
             PreencherTabelaContatos();
-            PreencherTabelaContatosAgrupados();
+            
         }
 
         private void PreencherTabelaContatos()
@@ -51,48 +51,7 @@ namespace eAgenda.WindowsForms
 
         }
 
-        private void PreencherTabelaContatosAgrupados()
-        {
-            dataGridContatoAgrupados.Refresh();
-            tableContatosAgrupados.Clear();
-            dataGridContatoAgrupados.DataSource = tableContatosAgrupados;
-
-
-            var contatosAgrupadosPorCargo = controlador.SelecionarContatosAgrupados(c => c.Cargo);
-            List<Contato> contatosNovos = new List<Contato>();
-            
-
-            foreach (var contato in contatosAgrupadosPorCargo)
-            {
-                contatosNovos = contato.Contatos;
-
-                foreach (Contato item in contatosNovos)
-                {
-
-                    DataRow linha = tableContatosAgrupados.NewRow();
-
-                    linha["Id"] = item.Id;
-                    linha["Nome"] = item.Nome;
-                    linha["Empresa"] = item.Empresa;
-                    linha["Cargo"] = item.Cargo;
-                    linha["Email"] = item.Email;
-                    linha["Telefone"] = item.Telefone;
-
-                    tableContatosAgrupados.Rows.Add(linha);
-
-
-                }
-
-            }
-
-            
-          
-
-            
-
-
-
-        }
+        
         private void ContatoForms_Load(object sender, EventArgs e)
         {
 
@@ -140,7 +99,7 @@ namespace eAgenda.WindowsForms
             }
 
             PreencherTabelaContatos();
-            PreencherTabelaContatosAgrupados();
+            
         }
 
         private Contato CriarContato()
@@ -191,40 +150,7 @@ namespace eAgenda.WindowsForms
             PreencherTabelaContatos();
         }
 
-        private void bt_excluir_Click(object sender, EventArgs e)
-        {
-            if (dataGridContatoAgrupados.RowCount == 0)
-                return;
-
-
-            int id = Convert.ToInt32(dataGridContatoAgrupados.CurrentRow.Cells["Id"].Value);
-
-            bool numeroEncontrado = controlador.Existe(id);
-
-            if (numeroEncontrado == false)
-            {
-
-                controlador.Excluir(id);
-                return;
-            }
-
-            bool conseguiuExcluir = controlador.Excluir(id);
-
-            if (conseguiuExcluir)
-            {
-                MessageBox.Show("Sucesso");
-
-            }
-
-
-            else
-            {
-                MessageBox.Show("Erro");
-
-            }
-
-            PreencherTabelaContatosAgrupados();
-        }
+        
 
         private void bt_editar_Click(object sender, EventArgs e)
         {
@@ -257,7 +183,7 @@ namespace eAgenda.WindowsForms
             }
             limparCampos();
             PreencherTabelaContatos();
-            PreencherTabelaContatosAgrupados();
+            
         }
     }
 }

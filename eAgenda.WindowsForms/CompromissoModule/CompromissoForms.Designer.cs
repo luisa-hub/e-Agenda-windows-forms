@@ -33,10 +33,20 @@ namespace eAgenda.WindowsForms
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Compromissos = new System.Windows.Forms.TabPage();
+            this.bt_excluir = new System.Windows.Forms.Button();
+            this.dataGridCompromissos = new System.Windows.Forms.DataGridView();
             this.Passados = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataPassado = new System.Windows.Forms.DateTimePicker();
+            this.dataGridPassado = new System.Windows.Forms.DataGridView();
             this.Futuro = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dataFuturoDois = new System.Windows.Forms.DateTimePicker();
+            this.dataFuturoUm = new System.Windows.Forms.DateTimePicker();
             this.dataGridFuturo = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bt_editar = new System.Windows.Forms.Button();
             this.dt_data = new System.Windows.Forms.DateTimePicker();
             this.btGravar = new System.Windows.Forms.Button();
             this.tb_hora = new System.Windows.Forms.MaskedTextBox();
@@ -73,11 +83,6 @@ namespace eAgenda.WindowsForms
             this.dataColumn14 = new System.Data.DataColumn();
             this.dataColumn15 = new System.Data.DataColumn();
             this.dataColumn16 = new System.Data.DataColumn();
-            this.dataGridPassado = new System.Windows.Forms.DataGridView();
-            this.dataGridCompromissos = new System.Windows.Forms.DataGridView();
-            this.bt_excluir = new System.Windows.Forms.Button();
-            this.dataPassado = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.dataSetFuturo = new System.Data.DataSet();
             this.tableFuturo = new System.Data.DataTable();
             this.dataColumn17 = new System.Data.DataColumn();
@@ -88,15 +93,12 @@ namespace eAgenda.WindowsForms
             this.dataColumn22 = new System.Data.DataColumn();
             this.dataColumn23 = new System.Data.DataColumn();
             this.dataColumn24 = new System.Data.DataColumn();
-            this.dataFuturoUm = new System.Windows.Forms.DateTimePicker();
-            this.dataFuturoDois = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.bt_editar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Compromissos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCompromissos)).BeginInit();
             this.Passados.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPassado)).BeginInit();
             this.Futuro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFuturo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -105,8 +107,6 @@ namespace eAgenda.WindowsForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetPassado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePassado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPassado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCompromissos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetFuturo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableFuturo)).BeginInit();
             this.SuspendLayout();
@@ -127,7 +127,7 @@ namespace eAgenda.WindowsForms
             this.tabControl1.Location = new System.Drawing.Point(0, 7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(447, 260);
+            this.tabControl1.Size = new System.Drawing.Size(460, 260);
             this.tabControl1.TabIndex = 0;
             // 
             // Compromissos
@@ -137,10 +137,32 @@ namespace eAgenda.WindowsForms
             this.Compromissos.Location = new System.Drawing.Point(4, 22);
             this.Compromissos.Name = "Compromissos";
             this.Compromissos.Padding = new System.Windows.Forms.Padding(3);
-            this.Compromissos.Size = new System.Drawing.Size(439, 234);
+            this.Compromissos.Size = new System.Drawing.Size(452, 234);
             this.Compromissos.TabIndex = 0;
             this.Compromissos.Text = "Compromissos";
             this.Compromissos.UseVisualStyleBackColor = true;
+            // 
+            // bt_excluir
+            // 
+            this.bt_excluir.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bt_excluir.Font = new System.Drawing.Font("Veneer", 10F);
+            this.bt_excluir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_excluir.Location = new System.Drawing.Point(185, 194);
+            this.bt_excluir.Name = "bt_excluir";
+            this.bt_excluir.Size = new System.Drawing.Size(84, 29);
+            this.bt_excluir.TabIndex = 3;
+            this.bt_excluir.Text = "Excluir";
+            this.bt_excluir.UseVisualStyleBackColor = false;
+            this.bt_excluir.Click += new System.EventHandler(this.bt_excluir_Click);
+            // 
+            // dataGridCompromissos
+            // 
+            this.dataGridCompromissos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCompromissos.Location = new System.Drawing.Point(10, 26);
+            this.dataGridCompromissos.Name = "dataGridCompromissos";
+            this.dataGridCompromissos.Size = new System.Drawing.Size(436, 150);
+            this.dataGridCompromissos.TabIndex = 2;
+            this.dataGridCompromissos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCompromissos_CellContentClick);
             // 
             // Passados
             // 
@@ -150,10 +172,37 @@ namespace eAgenda.WindowsForms
             this.Passados.Location = new System.Drawing.Point(4, 22);
             this.Passados.Name = "Passados";
             this.Passados.Padding = new System.Windows.Forms.Padding(3);
-            this.Passados.Size = new System.Drawing.Size(439, 234);
+            this.Passados.Size = new System.Drawing.Size(452, 234);
             this.Passados.TabIndex = 1;
             this.Passados.Text = "Passados";
             this.Passados.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label2.Location = new System.Drawing.Point(109, 202);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Data";
+            // 
+            // dataPassado
+            // 
+            this.dataPassado.Location = new System.Drawing.Point(145, 198);
+            this.dataPassado.Name = "dataPassado";
+            this.dataPassado.Size = new System.Drawing.Size(133, 20);
+            this.dataPassado.TabIndex = 19;
+            this.dataPassado.ValueChanged += new System.EventHandler(this.dataPassado_ValueChanged);
+            // 
+            // dataGridPassado
+            // 
+            this.dataGridPassado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPassado.Location = new System.Drawing.Point(10, 28);
+            this.dataGridPassado.Name = "dataGridPassado";
+            this.dataGridPassado.Size = new System.Drawing.Size(436, 150);
+            this.dataGridPassado.TabIndex = 2;
+            this.dataGridPassado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCompromissos_CellContentClick);
             // 
             // Futuro
             // 
@@ -164,17 +213,53 @@ namespace eAgenda.WindowsForms
             this.Futuro.Controls.Add(this.dataGridFuturo);
             this.Futuro.Location = new System.Drawing.Point(4, 22);
             this.Futuro.Name = "Futuro";
-            this.Futuro.Size = new System.Drawing.Size(439, 234);
+            this.Futuro.Size = new System.Drawing.Size(452, 234);
             this.Futuro.TabIndex = 2;
             this.Futuro.Text = "Futuros";
             this.Futuro.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label10.Location = new System.Drawing.Point(132, 212);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(27, 13);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Fim";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label9.Location = new System.Drawing.Point(126, 186);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Início";
+            // 
+            // dataFuturoDois
+            // 
+            this.dataFuturoDois.Location = new System.Drawing.Point(165, 206);
+            this.dataFuturoDois.Name = "dataFuturoDois";
+            this.dataFuturoDois.Size = new System.Drawing.Size(133, 20);
+            this.dataFuturoDois.TabIndex = 20;
+            this.dataFuturoDois.ValueChanged += new System.EventHandler(this.dataFuturoDois_ValueChanged);
+            // 
+            // dataFuturoUm
+            // 
+            this.dataFuturoUm.Location = new System.Drawing.Point(165, 180);
+            this.dataFuturoUm.Name = "dataFuturoUm";
+            this.dataFuturoUm.Size = new System.Drawing.Size(133, 20);
+            this.dataFuturoUm.TabIndex = 19;
+            this.dataFuturoUm.ValueChanged += new System.EventHandler(this.dataFuturoUm_ValueChanged);
             // 
             // dataGridFuturo
             // 
             this.dataGridFuturo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridFuturo.Location = new System.Drawing.Point(13, 24);
             this.dataGridFuturo.Name = "dataGridFuturo";
-            this.dataGridFuturo.Size = new System.Drawing.Size(414, 150);
+            this.dataGridFuturo.Size = new System.Drawing.Size(436, 150);
             this.dataGridFuturo.TabIndex = 1;
             this.dataGridFuturo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCompromissos_CellContentClick);
             // 
@@ -201,6 +286,19 @@ namespace eAgenda.WindowsForms
             this.panel2.Size = new System.Drawing.Size(463, 186);
             this.panel2.TabIndex = 1;
             // 
+            // bt_editar
+            // 
+            this.bt_editar.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.bt_editar.Font = new System.Drawing.Font("Veneer", 10F);
+            this.bt_editar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_editar.Location = new System.Drawing.Point(238, 145);
+            this.bt_editar.Name = "bt_editar";
+            this.bt_editar.Size = new System.Drawing.Size(84, 29);
+            this.bt_editar.TabIndex = 19;
+            this.bt_editar.Text = "Editar";
+            this.bt_editar.UseVisualStyleBackColor = false;
+            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
+            // 
             // dt_data
             // 
             this.dt_data.Location = new System.Drawing.Point(68, 109);
@@ -210,17 +308,20 @@ namespace eAgenda.WindowsForms
             // 
             // btGravar
             // 
-            this.btGravar.Location = new System.Drawing.Point(146, 143);
+            this.btGravar.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btGravar.Font = new System.Drawing.Font("Veneer", 10F);
+            this.btGravar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btGravar.Location = new System.Drawing.Point(140, 145);
             this.btGravar.Name = "btGravar";
-            this.btGravar.Size = new System.Drawing.Size(75, 23);
+            this.btGravar.Size = new System.Drawing.Size(84, 29);
             this.btGravar.TabIndex = 17;
             this.btGravar.Text = "Gravar";
-            this.btGravar.UseVisualStyleBackColor = true;
+            this.btGravar.UseVisualStyleBackColor = false;
             this.btGravar.Click += new System.EventHandler(this.btGravar_Click);
             // 
             // tb_hora
             // 
-            this.tb_hora.Location = new System.Drawing.Point(192, 70);
+            this.tb_hora.Location = new System.Drawing.Point(192, 72);
             this.tb_hora.Mask = "00:00";
             this.tb_hora.Name = "tb_hora";
             this.tb_hora.Size = new System.Drawing.Size(38, 20);
@@ -239,64 +340,70 @@ namespace eAgenda.WindowsForms
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 115);
+            this.label8.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label8.Location = new System.Drawing.Point(32, 116);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 13);
+            this.label8.Size = new System.Drawing.Size(34, 13);
             this.label8.TabIndex = 13;
             this.label8.Text = "Data";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(146, 75);
+            this.label7.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label7.Location = new System.Drawing.Point(138, 79);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.Size = new System.Drawing.Size(54, 13);
             this.label7.TabIndex = 12;
             this.label7.Text = "Término";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 75);
+            this.label6.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label6.Location = new System.Drawing.Point(17, 79);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Hora Início";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(274, 75);
+            this.label5.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label5.Location = new System.Drawing.Point(274, 79);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 13);
+            this.label5.Size = new System.Drawing.Size(30, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Link";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(230, 109);
+            this.label4.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label4.Location = new System.Drawing.Point(224, 116);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 8;
             this.label4.Text = "Contatos";
-            
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(295, 37);
+            this.label3.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label3.Location = new System.Drawing.Point(295, 41);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Local";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 34);
+            this.label1.Font = new System.Drawing.Font("Verdana", 8.25F);
+            this.label1.Location = new System.Drawing.Point(12, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Assunto";
             // 
@@ -304,7 +411,7 @@ namespace eAgenda.WindowsForms
             // 
             this.cb_contatos.DisplayMember = "Id";
             this.cb_contatos.FormattingEnabled = true;
-            this.cb_contatos.Location = new System.Drawing.Point(285, 106);
+            this.cb_contatos.Location = new System.Drawing.Point(285, 108);
             this.cb_contatos.Name = "cb_contatos";
             this.cb_contatos.Size = new System.Drawing.Size(149, 21);
             this.cb_contatos.TabIndex = 5;
@@ -444,51 +551,6 @@ namespace eAgenda.WindowsForms
             // 
             this.dataColumn16.ColumnName = "Data";
             // 
-            // dataGridPassado
-            // 
-            this.dataGridPassado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPassado.Location = new System.Drawing.Point(3, 22);
-            this.dataGridPassado.Name = "dataGridPassado";
-            this.dataGridPassado.Size = new System.Drawing.Size(420, 158);
-            this.dataGridPassado.TabIndex = 2;
-            this.dataGridPassado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCompromissos_CellContentClick);
-            // 
-            // dataGridCompromissos
-            // 
-            this.dataGridCompromissos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridCompromissos.Location = new System.Drawing.Point(16, 26);
-            this.dataGridCompromissos.Name = "dataGridCompromissos";
-            this.dataGridCompromissos.Size = new System.Drawing.Size(401, 150);
-            this.dataGridCompromissos.TabIndex = 2;
-            this.dataGridCompromissos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCompromissos_CellContentClick);
-            // 
-            // bt_excluir
-            // 
-            this.bt_excluir.Location = new System.Drawing.Point(185, 194);
-            this.bt_excluir.Name = "bt_excluir";
-            this.bt_excluir.Size = new System.Drawing.Size(75, 23);
-            this.bt_excluir.TabIndex = 3;
-            this.bt_excluir.Text = "Excluir";
-            this.bt_excluir.UseVisualStyleBackColor = true;
-            this.bt_excluir.Click += new System.EventHandler(this.bt_excluir_Click);
-            // 
-            // dataPassado
-            // 
-            this.dataPassado.Location = new System.Drawing.Point(145, 198);
-            this.dataPassado.Name = "dataPassado";
-            this.dataPassado.Size = new System.Drawing.Size(133, 20);
-            this.dataPassado.TabIndex = 19;
-            this.dataPassado.ValueChanged += new System.EventHandler(this.dataPassado_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 202);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Data";
-            // 
             // dataSetFuturo
             // 
             this.dataSetFuturo.DataSetName = "NewDataSet";
@@ -540,50 +602,6 @@ namespace eAgenda.WindowsForms
             // 
             this.dataColumn24.ColumnName = "Assunto";
             // 
-            // dataFuturoUm
-            // 
-            this.dataFuturoUm.Location = new System.Drawing.Point(142, 180);
-            this.dataFuturoUm.Name = "dataFuturoUm";
-            this.dataFuturoUm.Size = new System.Drawing.Size(133, 20);
-            this.dataFuturoUm.TabIndex = 19;
-            this.dataFuturoUm.ValueChanged += new System.EventHandler(this.dataFuturoUm_ValueChanged);
-            // 
-            // dataFuturoDois
-            // 
-            this.dataFuturoDois.Location = new System.Drawing.Point(142, 206);
-            this.dataFuturoDois.Name = "dataFuturoDois";
-            this.dataFuturoDois.Size = new System.Drawing.Size(133, 20);
-            this.dataFuturoDois.TabIndex = 20;
-            this.dataFuturoDois.ValueChanged += new System.EventHandler(this.dataFuturoDois_ValueChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(102, 186);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Início";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(113, 212);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(23, 13);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Fim";
-            // 
-            // bt_editar
-            // 
-            this.bt_editar.Location = new System.Drawing.Point(244, 143);
-            this.bt_editar.Name = "bt_editar";
-            this.bt_editar.Size = new System.Drawing.Size(75, 23);
-            this.bt_editar.TabIndex = 19;
-            this.bt_editar.Text = "Editar";
-            this.bt_editar.UseVisualStyleBackColor = true;
-            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
-            // 
             // CompromissoForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -594,12 +612,15 @@ namespace eAgenda.WindowsForms
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "CompromissoForms";
-            this.Text = "CompromissoForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Meus compromissos";
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.Compromissos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCompromissos)).EndInit();
             this.Passados.ResumeLayout(false);
             this.Passados.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPassado)).EndInit();
             this.Futuro.ResumeLayout(false);
             this.Futuro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFuturo)).EndInit();
@@ -610,8 +631,6 @@ namespace eAgenda.WindowsForms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetPassado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePassado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPassado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCompromissos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetFuturo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableFuturo)).EndInit();
             this.ResumeLayout(false);

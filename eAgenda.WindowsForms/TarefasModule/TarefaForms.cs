@@ -13,6 +13,9 @@ using System.Windows.Forms;
 
 namespace eAgenda.WindowsForms
 {
+    /// <summary>
+    /// Formulário das tarefas concluídas e pendentes
+    /// </summary>
     public partial class TarefaForms : Form
     {
         protected ControladorTarefa controlador;
@@ -24,7 +27,9 @@ namespace eAgenda.WindowsForms
             PreencherTabelaConcluida();
         }
 
-
+        /// <summary>
+        /// Preenche o DataGrid das Tarefas Pendentes
+        /// </summary>
 
         private void PreencherTabelaPendente()
         {
@@ -55,6 +60,9 @@ namespace eAgenda.WindowsForms
 
         }
 
+        /// <summary>
+        /// Preenche o DataGrid das tarefas concluídas
+        /// </summary>
         private void PreencherTabelaConcluida()
         {
             dataGridTarefaConcluidas.Refresh();
@@ -83,7 +91,11 @@ namespace eAgenda.WindowsForms
 
         }
 
-
+        /// <summary>
+        /// Registra uma nova tarefa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bt_gravar_Click(object sender, EventArgs e)
         {
             Tarefa tarefa = CriarTarefa();
@@ -114,6 +126,9 @@ namespace eAgenda.WindowsForms
         }
 
 
+        /// <summary>
+        /// Limpa os campos de texto e prioridade
+        /// </summary>
         private void limparCampos()
         {
 
@@ -121,6 +136,11 @@ namespace eAgenda.WindowsForms
             cb_prioridadeTarefa.SelectedItem = null;
         }
 
+        /// <summary>
+        /// Exclui uma tarefa pendente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bt_excluir_Click(object sender, EventArgs e)
         {
 
@@ -156,6 +176,12 @@ namespace eAgenda.WindowsForms
             PreencherTabelaPendente();
         }
 
+
+        /// <summary>
+        /// Exclui uma tabela concluída
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bt_excluirConcluida_Click(object sender, EventArgs e)
         {
             if (dataGridTarefaConcluidas.RowCount == 0)
@@ -290,6 +316,11 @@ namespace eAgenda.WindowsForms
 
             PreencherTabelaConcluida();
             limparCampos();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
